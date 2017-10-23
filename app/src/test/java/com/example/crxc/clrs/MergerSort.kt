@@ -17,8 +17,8 @@ class MergeSort {
     private fun mergeSort(list: MutableList<Int>): List<Int> {
         val listSize = list.size
         if (listSize > 1) {
-            val subList = list.subList(0, listSize / 2 - 1)
-            val sublist2 = list.subList(listSize / 2, listSize - 1)
+            val subList = list.subList(0, listSize / 2)
+            val sublist2 = list.subList(listSize / 2, listSize)
             val mergeSort = mergeSort(subList)
             val mergeSort2 = mergeSort(sublist2)
             return mergeList(mergeSort, mergeSort2)
@@ -42,9 +42,10 @@ class MergeSort {
             }
         }
         if (sortSize == size) {
-            mutableListOf.addAll(mergeSort2.subList(sortSize2,size2-1))
+            mutableListOf.addAll(mergeSort2.subList(sortSize2,size2))
         }else{
-            mutableListOf.addAll(mergeSort.subList(sortSize,size-1))
+            mutableListOf.addAll(mergeSort.subList(sortSize,size))
         }
+        return mutableListOf
     }
 }
